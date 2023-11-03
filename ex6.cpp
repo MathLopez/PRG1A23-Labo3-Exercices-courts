@@ -28,7 +28,7 @@ int main() {
 }
 
 bool multiplier(unsigned& a, unsigned& b, unsigned& r){
-    if((static_cast<unsigned long>(a) * static_cast<unsigned long>(b)) >= numeric_limits<unsigned>::max() - 1){
+    if((static_cast<unsigned long long>(a) * static_cast<unsigned long long>(b)) >= numeric_limits<unsigned>::max() - 1){
         return 0;
     }
     r = a * b;

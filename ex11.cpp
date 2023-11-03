@@ -32,6 +32,22 @@ using namespace std;
 //| 70: p | 71: q | 72: r | 73: s | 74: t | 75: u | 76: v | 77: w |
 //| 78: x | 79: y | 7A: z | 7B: { | 7C: | | 7D: } | 7E: ~ | 7F:   |
 
+void ascii_table(int nb_colones);
+
 int main() {
    ascii_table(8);
+}
+
+void ascii_table(int nb_colones){
+    int nb_lignes = 127 / nb_colones;
+    if(127 % nb_colones != 0){
+        nb_lignes++;
+    }
+    for (int i = 0; i < nb_lignes; ++i) {
+        cout << "|";
+        for (int j = 0; j < nb_colones and i + j <= 127; ++j) {
+
+        }
+        cout << endl << flush;
+    }
 }

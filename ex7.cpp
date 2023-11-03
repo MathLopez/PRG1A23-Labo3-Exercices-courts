@@ -8,6 +8,8 @@ using namespace std;
 // pour b entre 2 et 36. Les chiffres de 10 à 35 utilisent
 // les lettres majuscules de A à Z.
 
+string en_base(int a, int b);
+
 int main() {
 
   for(int b = 2; b <= 36; ++b)
@@ -15,6 +17,12 @@ int main() {
      cout << 42 << " en base " << b << " = " << en_base(42,b) << endl;
   }
    cout << 0 << " en base " << 7 << " = " << en_base(0,7) << endl;
+}
+
+string en_base(int a, int b){
+    for (int i = 0; i < b; ++i) {
+
+    }
 }
 
 // Le programme doit afficher
