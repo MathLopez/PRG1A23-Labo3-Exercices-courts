@@ -11,6 +11,8 @@ using namespace std;
 // Vous pouvez uniquement utiliser la méthode length() et les
 // opérateurs [] et += de la classe string.
 
+string sous_chaine(string  str, int pos, int len);
+
 int main() {
 
    cout << sous_chaine("hello",1,3) << endl;
@@ -24,4 +26,16 @@ int main() {
 
    cout << sous_chaine("abcdef",20,7) << endl;
    // affiche une chaine vide
+}
+
+string sous_chaine(string  str, int pos, int len){
+    string result;
+    if(pos < str.length()){
+        int current = pos;
+        while (current <= (len + pos - 1) and pos < str.length()){
+            result += str[current];
+            ++current;
+        }
+    }
+    return result;
 }
