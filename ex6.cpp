@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 
 using namespace std;
 
@@ -13,6 +14,8 @@ using namespace std;
 //1234567 8765432
 //Le produit de 1234567 et 8765432 depasse la limite du type unsigned
 
+bool multiplier(unsigned& a, unsigned& b, unsigned& r);
+
 int main() {
 
    unsigned a, b, r;
@@ -22,4 +25,12 @@ int main() {
             cout << a << " * " << b << " = " << r << endl);
 
    cout << "Le produit de " << a << " et " << b << " depasse la limite du type unsigned";
+}
+
+bool multiplier(unsigned& a, unsigned& b, unsigned& r){
+    if((static_cast<unsigned long>(a) * static_cast<unsigned long>(b)) >= numeric_limits<unsigned>::max() - 1){
+        return 0;
+    }
+    r = a * b;
+    return 1;
 }
