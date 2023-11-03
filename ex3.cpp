@@ -7,6 +7,8 @@ using namespace std;
 // str. Si cette lettre apparait plusieurs fois c'est la
 // dernière instance qui doit être retournée.
 
+char& plus_petite_lettre(string& s);
+
 int main() {
 
    string s{"wisigoth"};
@@ -18,4 +20,19 @@ int main() {
    plus_petite_lettre(s) = '*';
    cout << s << endl;
    // affiche abrar*courcix
+}
+
+char& plus_petite_lettre(string& s){
+    int counter = 0;
+    int idSmall = 0;
+    char cSmall = s[idSmall];
+    for(char c:s){
+        if(c <= cSmall){
+            cSmall = c;
+            idSmall = counter;
+
+        }
+        counter++;
+    }
+    return s[idSmall];
 }
